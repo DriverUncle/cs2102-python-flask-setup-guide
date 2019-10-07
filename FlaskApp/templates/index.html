@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="static/css/style-simple.css">
+</head>
+<body class="blue-background flex">
+    <div class="login-panel text-align-center">
+        <img src="static/images/login-img.jpg">
+        <form class="loginForm">
+            {{ form.csrf_token }}
+
+            <div class="formField">
+                {{ form.username }}
+                {% if form.username.errors %}
+                    <div class="errorMessage">
+                    {% for error in form.username.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="formField">
+                {{ form.password }}
+                {% if form.password.errors %}
+                    <div class="errorMessage">
+                    {% for error in form.password.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <button id="loginButton" formmethod="post">login</button>
+        </form>
+        <p class="text-align-center white-font">First time here? <a href="/registration">Sign up here!</a></p>
+    </div>
+
+</body>
+</html>

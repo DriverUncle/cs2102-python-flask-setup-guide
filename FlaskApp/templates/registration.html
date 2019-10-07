@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+
+    <link rel="stylesheet" href="static/css/style-simple.css">
+</head>
+<body class="blue-background flex">
+    <div class="register-panel text-align-center">
+        <img src="static/images/joinus.png">
+        <form class="registrationForm">
+            {{ form.hidden_tag() }}
+
+            <div class="formField">
+                {{ form.username }}
+                {% if form.username.errors %}
+                    <div class="errorMessage">
+                    {% for error in form.username.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="formField">
+                {{ form.first_name }}
+            </div>
+
+            <div class="formField">
+                {{ form.last_name }}
+            </div>
+
+            <div class="formField">
+                {{ form.password }}
+                {% if form.password.errors %}
+                    <div class="errorMessage">
+                    {% for error in form.password.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+{#            <div class="formField">#}
+{#                <input type="checkbox" name="driverRegistration" value="isDriver"> Want to register as a driver? <br>#}
+{#            </div>#}
+{##}
+{#            <div class="formField">#}
+{#                {{ form.car_plate }}#}
+{#                {% if form.car_plate.errors %}#}
+{#                    <div class="errorMessage">#}
+{#                    {% for error in form.car_plate.errors %}#}
+{#                        <li>{{ error }}</li>#}
+{#                    {% endfor %}#}
+{#                    </div>#}
+{#                {% endif %}#}
+{#            </div>#}
+{##}
+{#            <div class="formField">#}
+{#                {{ form.car_brand }}#}
+{#                {% if form.car_brand.errors %}#}
+{#                    <div class="errorMessage">#}
+{#                    {% for error in form.car_brand.errors %}#}
+{#                        <li>{{ error }}</li>#}
+{#                    {% endfor %}#}
+{#                    </div>#}
+{#                {% endif %}#}
+{#            </div>#}
+{##}
+{#            <div class="formField">#}
+{#                {{ form.car_model }}#}
+{#                {% if form.car_model.errors %}#}
+{#                    <div class="errorMessage">#}
+{#                    {% for error in form.car_model.errors %}#}
+{#                        <li>{{ error }}</li>#}
+{#                    {% endfor %}#}
+{#                    </div>#}
+{#                {% endif %}#}
+{#            </div>#}
+{##}
+{#            <div class="formField">#}
+{#                {{ form.car_size }}#}
+{#                {% if form.car_size.errors %}#}
+{#                    <div class="errorMessage">#}
+{#                    {% for error in form.car_size.errors %}#}
+{#                        <li>{{ error }}</li>#}
+{#                    {% endfor %}#}
+{#                    </div>#}
+{#                {% endif %}#}
+{#            </div>#}
+{##}
+{#            <div class="formField">#}
+{#                {{ form.car_colour }}#}
+{#                {% if form.car_colour.errors %}#}
+{#                    <div class="errorMessage">#}
+{#                    {% for error in form.car_colour.errors %}#}
+{#                        <li>{{ error }}</li>#}
+{#                    {% endfor %}#}
+{#                    </div>#}
+{#                {% endif %}#}
+{#            </div>#}
+
+            <button id="registerButton" formmethod="post">register</button>
+        </form>
+        <p class="text-align-center white-font">Already registered? <a href="/login">Login</a></p>
+    </div>
+</body>
+</html>

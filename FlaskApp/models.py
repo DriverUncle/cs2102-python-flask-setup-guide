@@ -3,7 +3,8 @@ from __init__ import db
 
 class WebUser(db.Model):
     username = db.Column(db.String, primary_key=True)
-    preferred_name = db.Column(db.String, nullable=True)
+    first_name = db.Column(db.String, nullable=True)
+    last_name = db.Column(db.String, nullable=True)
     password = db.Column(db.String, nullable=False)
 
     def is_authenticated(self):

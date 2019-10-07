@@ -10,33 +10,61 @@ form.registrationForm {
     display: block;
 }
 
-form.formField {
-    color: black;
+div.formField {
+    color: white;
+    font-family: monospace;
     display: block;
-    padding-top: 15px;
-    padding-left: 15px;
+    padding-top: 0.25rem;
 }
 
 button {
     text-align: center;
-    font-size: 16px;
-    border-radius: 12px;
-    border: none;
     cursor: pointer;
-}
-
-#loginButton {
-    background-color: #30799B;
-    color: white;
-}
-
-#registerButton {
-    background-color: green;
-    color: white;
+    font-family: monospace;
+    margin-top: 1rem;
 }
 
 .errorMessage {
     color: red;
     text-align: left;
     padding-top: 5px;
+}
+
+.blue-background {
+  background-image: linear-gradient(to bottom right, #3D95BB, #6FBFBC);
+}
+
+.flex {
+    display: flex;
+}
+
+.register-panel {
+    margin: auto;
+}
+
+.register-panel > img {
+    width: 25rem;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+/* Fonts */
+.white-font {
+    color: white;
+    font-family: monospace;
+}
+
+form.loginForm {
+    color: black;
+    display: block;
+}
+
+.login-panel {
+    margin: auto;
+}
+
+.login-panel > img {
+    width: 25rem;
 }
