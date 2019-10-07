@@ -1,10 +1,3 @@
--- DO we need this?
-CREATE TABLE web_user(
-    username VARCHAR PRIMARY KEY NOT NULL,
-    preferred_name VARCHAR,
-    password VARCHAR NOT NULL
-);
-
 CREATE TABLE User (
 	username varchar(50) PRIMARY KEY,
     firstName varchar(20),
