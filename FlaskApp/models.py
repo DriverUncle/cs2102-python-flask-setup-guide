@@ -38,3 +38,8 @@ class Bids(db.Model):
     price = db.Column(db.String, nullable=False)
     status = db.Column(db.String)
     no_passengers = db.Column(db.String, nullable=False)
+
+
+class Driver(db.Model):
+    username = db.Column(db.String, primary_key=True)
+    d_rating = db.Column(db.String)

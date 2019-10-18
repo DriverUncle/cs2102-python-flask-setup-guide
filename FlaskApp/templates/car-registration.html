@@ -12,6 +12,11 @@
 {% include 'navbar-header.html' %}
 
 <div class="container" style="padding-top: 15rem">
+    <div class="errorMessage">
+        {% if message %}
+            {{ message }}
+        {% endif %}
+    </div>
     <div class="car-registration-title white-font">
         <h3 class="text-align-center">Add your car details and you'll be ready to start sharing rides!</h3>
     </div>
@@ -39,6 +44,9 @@
         <div class="form-row white-font">
             <button type="submit" class="btn btn-outline-dark" formmethod="post">Add Car</button>
         </div>
+        {% if register_error %}
+        You don't have a car now. Please register a car here.
+        {% endif %}
         {% if empty_error %}
         Input can't be empty! Must fill in all the fields!
         {% endif %}

@@ -24,15 +24,13 @@
             <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Date</th>
-                <th scope="col">Time</th>
+                <th scope="col">Date Posted</th>
+                <th scope="col">Departing At</th>
                 <th scope="col">Pick up</th>
                 <th scope="col">Destination</th>
-                <th scope="col">Your Bid ($S)</th>
                 <th scope="col">Highest Bid ($S)</th>
                 <th scope="col">Number of Bidders</th>
                 <th scope="col">Time Remaining</th>
-                <th scope="col">Bid Status</th>
                 <th scope="col">Delete</th>
             </tr>
             </thead>
@@ -47,8 +45,6 @@
 					<td>{{ things[4] }}</td>
 					<td>{{ things[5] }}</td>
 					<td>{{ things[6] }}</td>
-					<td>{{ things[7] }}</td>
-					<td>{{ things[8] }}</td>
                 <td>
                     <button type="button" class="btn delete-button">Delete</button>
                 </td>
@@ -66,8 +62,7 @@
             <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Advertisement No</th>
-                {# Advertisement No refers to the index of the advertisement #}
+                <th scope="col">Advertisement Posted At</th>
                 <th scope="col">Passenger Username</th>
                 <th scope="col">Bid ($S)</th>
                 <th scope="col"># Passengers</th>

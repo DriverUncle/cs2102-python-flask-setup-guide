@@ -69,7 +69,6 @@ class LoginForm(FlaskForm):
 
 class BidForm(FlaskForm):
     hidden_did = HiddenField()
-    hidden_dateposted = HiddenField()
     hidden_timeposted = HiddenField()
     hidden_maxPax = HiddenField()
     price = StringField(

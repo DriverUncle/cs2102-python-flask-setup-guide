@@ -27,45 +27,47 @@
         <div class="form-row white-font">
             <div class="form-group col-md-6">
                 <label for="from">From</label>
-                <input type="text" class="form-control" id="from" placeholder="Pick Up Location">
+                <select class="form-control" id="from" name="from">
+                        {# need to convert this to the cars inputted by driver #}
+                        {% for place in place_list %}
+                            <option value="{{place[0]}}">{{place[0]}}</option>
+                        {% endfor %}
+                </select>
             </div>
             <div class="form-group col-md-6">
                 <label for="to">To</label>
-                <input type="text" class="form-control" id="to" placeholder="Destination">
+                <select class="form-control" id="to" name="to">
+                        {# need to convert this to the cars inputted by driver #}
+                        {% for place in place_list %}
+                            <option value="{{place[0]}}">{{place[0]}}</option>
+                        {% endfor %}
+                </select>
             </div>
         </div>
         <div class="form-row white-font">
             <div class="form-group col-md-3">
                 <label for="no_passengers">Max # of Passengers</label>
-                <input type="text" class="form-control" id="no_passengers" placeholder="Number of Passengers">
-<!--                <select class="form-control" id="no_passengers">-->
-<!--                    <option>1</option>-->
-<!--                    <option>2</option>-->
-<!--                    <option>3</option>-->
-<!--                    <option>4</option>-->
-<!--                </select>-->
+                <input type="number" class="form-control" id="no_passengers" name="no_passengers" placeholder="Number of Passengers">
             </div>
             <div class="form-group col-md-3">
                 <label for="price">Min Price ($S)</label>
-                <input type="text" class="form-control" id="price" placeholder="Minimum Acceptable Price">
+                <input type="number" class="form-control" id="price" name="price" placeholder="Minimum Acceptable Price">
             </div>
             <div class="form-group col-md-6">
-                <label for="car">Car Using For This Advertisement</label>
-                <form id="car_model_form" name="car_model_form" method="post">
-                    <select class="form-control" id="car_model" name="car_model">
-                        {# need to convert this to the cars inputted by driver #}
-                        {% for car_model in car_model_list %}
-                            <option>{{car_model[1] + " " + car_model[2] + " (" + car_model[0] + ")"}}</option>
-                        {% endfor %}
-                    </select>
-                </form>
+                <label for="car_model">Car Using For This Advertisement</label>
+                <select class="form-control" id="car_model" name="car_model">
+                    {# need to convert this to the cars inputted by driver #}
+                    {% for car_model in car_model_list %}
+                        <option value="{{car_model[1] + ' ' + car_model[2]}}">{{car_model[1] + " " + car_model[2] + " (" + car_model[0] + ")"}}</option>
+                    {% endfor %}
+                </select>
             </div>
         </div>
 
         <div class="form-row white-font">
             <div class="form-group col-md-4">
                 <div class='input-group date' id='datetimepicker1' style="color: black">
-                    <input type='text' class="form-control" placeholder="Date and Time of Departure"/>
+                    <input type='text' class="form-control" name="departure_time" placeholder="Date and Time of Departure"/>
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
@@ -78,8 +80,20 @@
             </script>
         </div>
         <div class="form-row white-font">
-            <button type="button" class="btn btn-outline-dark" formmethod="post">Create Advertisement</button>
+            <button type="submit" class="btn btn-outline-dark" formmethod="post">Create Advertisement</button>
         </div>
+        {% if empty_error %}
+        All the field must be filled!
+        {% endif %}
+        {% if same_place_error %}
+        The from and to places can't be the same!
+        {% endif %}
+        {% if exceed_limit_error %}
+        Your car can't take so many passengers!
+        {% endif %}
+        {% if success %}
+        You successfully added an advertisement!
+        {% endif %}
     </form>
 </div>
 
