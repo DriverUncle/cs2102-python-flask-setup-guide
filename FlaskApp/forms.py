@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SelectField, HiddenField
+from wtforms import StringField, PasswordField, SelectField, HiddenField, DecimalField
 from wtforms.validators import InputRequired, ValidationError
 
 
@@ -11,6 +11,14 @@ def is_valid_name(form, field):
 def is_valid_number(form, field):
     if not all(map(lambda char: char.isnumeric(), field.data)):
         raise ValidationError('This field should only contain numerics!')
+
+def is_valid_positiveNumber(form, field):
+    if not all(map(lambda val: val.isnumeric() and float(val) > 0, field.data)):
+        raise ValidationError('This field should be a non negative numeric value!')
+
+def is_valid_integer(form, field):
+    if not all(map(lambda val: val.isdigit(), field.data)):
+        raise ValidationError('This field should be an integer!')
 
 
 def agrees_terms_and_conditions(form, field):
@@ -63,13 +71,16 @@ class BidForm(FlaskForm):
     hidden_did = HiddenField()
     hidden_dateposted = HiddenField()
     hidden_timeposted = HiddenField()
+    hidden_maxPax = HiddenField()
     price = StringField(
         label='Price',
-        validators=[InputRequired(), is_valid_number],
+        validators=[InputRequired(), is_valid_positiveNumber],
         render_kw={'placeholder': 'Bidding Price ($)'}
     )
-    no_passengers = SelectField(
+    # choices=[(1, 1), (2, 2), (3, 3), (4, 4)]
+    no_passengers = StringField(
         label='# of Passengers',
-        choices=[(1, 1), (2, 2), (3, 3), (4, 4)]
+        validators=[InputRequired(), is_valid_positiveNumber, is_valid_integer],
+        render_kw={'placeholder': 'no. of passengers'}
     )
 

@@ -21,6 +21,16 @@
             </form>
         </div>
     </div>
+    <div>
+        <div class="error-summary errorMessage">
+            {% for error in form.no_passengers.errors %}
+                <h4> Error in your number of passengers: {{ error }} </h4>
+            {% endfor %}
+            {% for error in form.price.errors %}
+                <h4> Error in your bidding price: {{ error }} </h4>
+            {% endfor %}
+        </div>
+    </div>
     <div class="container" style="padding-top: 5rem">
         <div class="advertisement-list white-font">
             <h3 class="text-align-center">Current rides available:</h3>
@@ -56,7 +66,7 @@
                         <td>{{ ad[8] }}</td>
                         <td>
                             <button type="button" class="btn btn-outline-dark bid-button" data-did="{{ ad[2] }}"
-                                    data-dateposted="{{ ad[0] }}" data-timeposted="{{ ad[1] }}">Bid
+                                    data-dateposted="{{ ad[0] }}" data-timeposted="{{ ad[1] }}" data-maxPax="{{ ad[5] }}">Bid
                             </button>
                             <script>
                                 $('.bid-button').click(function () {
@@ -69,9 +79,11 @@
                                         show: true
                                     });
 
+                                    // Setting the hidden value so that the other HTML can use
                                     $("input[name=hidden_did]").val(did);
                                     $("input[name=hidden_dateposted]").val(dateposted);
                                     $("input[name=hidden_timeposted]").val(timeposted);
+                                    $("input[name=hidden_maxPax]").val($(this).attr('data-maxPax'));
 
                                 });</script>
                         </td>
@@ -147,6 +159,7 @@
                     {{ form.hidden_did }}
                     {{ form.hidden_dateposted }}
                     {{ form.hidden_timeposted }}
+                    {{ form.hidden_maxPax }}
 
                     <div class="formField" style="color: black">
                         {{ form.price }}

@@ -36,20 +36,24 @@ def render_home_page():
 
         # Bid form handling
         form = BidForm()
+        form.no_passengers.errors = ''
+        form.no_passengers.errors = ''
         if form.is_submitted():
             price = form.price.data
             no_passengers = form.no_passengers.data
             time_posted = form.hidden_dateposted.data + ' ' + form.hidden_timeposted.data
             driver_id = form.hidden_did.data
-
-            # disallow bidding to own-self's advertisement
-
-            # update when exists, insert when it does not exists
-            query = "INSERT INTO bids(passenger_id, driver_id, time_posted, price, status, no_passengers) " \
-                    "VALUES ('{}', '{}', '{}', '{}', 'ongoing', '{}')".format(current_user.username, driver_id,
-                                                                              time_posted, price, no_passengers)
-            db.session.execute(query)
-            db.session.commit()
+            if form.validate_on_submit():
+                # disallow bidding to own-self's advertisement
+                if int(no_passengers) > int(form.hidden_maxPax.data):
+                    form.no_passengers.errors.append('Max number of passengers allowed should be {}.'.format(form.hidden_maxPax.data))
+                else:
+                    # update when exists, insert when it does not exists
+                    query = "INSERT INTO bids(passenger_id, driver_id, time_posted, price, status, no_passengers) " \
+                            "VALUES ('{}', '{}', '{}', '{}', 'ongoing', '{}')".format(current_user.username, driver_id,
+                                                                                    time_posted, price, no_passengers)
+                    db.session.execute(query)
+                    db.session.commit()
 
         return render_template("home.html", form=form, current_user=current_user, ad_list=ad_list, bid_list=bid_list)
     else:
