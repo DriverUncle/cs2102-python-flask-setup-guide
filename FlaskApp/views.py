@@ -5,6 +5,8 @@ from __init__ import db, login_manager
 from forms import LoginForm, RegistrationForm, BidForm
 from models import AppUser
 
+from bidManager import makeBid
+
 view = Blueprint("view", __name__)
 
 @login_manager.user_loader
@@ -48,12 +50,7 @@ def render_home_page():
                 if int(no_passengers) > int(form.hidden_maxPax.data):
                     form.no_passengers.errors.append('Max number of passengers allowed should be {}.'.format(form.hidden_maxPax.data))
                 else:
-                    # update when exists, insert when it does not exists
-                    query = "INSERT INTO bids(passenger_id, driver_id, time_posted, price, status, no_passengers) " \
-                            "VALUES ('{}', '{}', '{}', '{}', 'ongoing', '{}')".format(current_user.username, driver_id,
-                                                                                    time_posted, price, no_passengers)
-                    db.session.execute(query)
-                    db.session.commit()
+                    makeBid(current_user.username, time_posted, driver_id, price, no_passengers)
 
         return render_template("home.html", form=form, current_user=current_user, ad_list=ad_list, bid_list=bid_list)
     else:
@@ -218,3 +215,12 @@ def render_view_advertisement_page():
 @login_required
 def render_privileged_page():
     return "<h1>Hello, {}!</h1>".format(current_user.first_name or current_user.username)
+
+
+
+
+####
+# BID RELATED FUNCTIONALITIES
+####
+
+

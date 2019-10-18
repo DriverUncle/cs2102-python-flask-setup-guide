@@ -86,7 +86,7 @@ CREATE TABLE Bids (
     passenger_ID     varchar(50) REFERENCES Passenger ON DELETE CASCADE,
     driver_ID        varchar(50) REFERENCES Driver    ON DELETE CASCADE,
     time_posted      TIMESTAMP,
-    price            INTEGER,
+    price            NUMERIC,
     status           varchar(20),
     no_passengers    INTEGER,
     PRIMARY KEY (passenger_ID, time_posted, driver_ID),
