@@ -260,8 +260,6 @@ def render_privileged_page():
     return "<h1>Hello, {}!</h1>".format(current_user.first_name or current_user.username)
 
 
-
-
 ####
 # BID RELATED FUNCTIONALITIES
 ####
@@ -274,4 +272,3 @@ def delete_bid():
     db.session.execute(query)
     db.session.commit()
     return redirect("/")
-

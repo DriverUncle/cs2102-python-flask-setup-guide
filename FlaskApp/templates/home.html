@@ -72,8 +72,6 @@
                                 $('.bid-button').click(function () {
                                     var did = $(this).attr('data-did');
                                     var dateposted = $(this).attr('data-dateposted');
-
-
                                     $('#bid-modal').modal({
                                         show: true
                                     });
@@ -82,7 +80,6 @@
                                     $("input[name=hidden_did]").val(did);
                                     $("input[name=hidden_dateposted]").val(dateposted);
                                     $("input[name=hidden_maxPax]").val($(this).attr('data-maxPax'));
-
                                 });</script>
                         </td>
                     </tr>
