@@ -13,8 +13,16 @@ def is_valid_number(form, field):
         raise ValidationError('This field should only contain numerics!')
 
 def is_valid_positiveNumber(form, field):
-    if not all(map(lambda val: val.isnumeric() and float(val) > 0, field.data)):
+    print(field.data)
+    if not (is_numeric(field.data) and float(field.data) > 0):
         raise ValidationError('This field should be a non negative numeric value!')
+
+def is_numeric(val):
+    try:
+        float(val)
+        return True
+    except ValueError:
+        return False
 
 def is_valid_integer(form, field):
     if not all(map(lambda val: val.isdigit(), field.data)):

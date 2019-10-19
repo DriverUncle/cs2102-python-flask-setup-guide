@@ -18,14 +18,11 @@ def makeBid(passenger_id, time_posted, driver_id, price, numPassengers):
     query = None
     if hasExistingBid(passenger_id, time_posted, driver_id):
         query = "UPDATE Bids SET Price = {}, no_passengers = {} WHERE (passenger_id, time_posted, driver_id) = "\
-            "('{}', '{}', '{}');".format(price, numPassengers, passenger_id, time_posted, driver_id)
+            "('{}', '{}', '{}');".format(round(float(price), 2), numPassengers, passenger_id, time_posted, driver_id)
     else:
         query = "INSERT INTO bids(passenger_id, driver_id, time_posted, price, status, no_passengers) " \
             "VALUES ('{}', '{}', '{}', '{}', 'ongoing', '{}')".format(current_user.username, driver_id,
-            time_posted, price, numPassengers)
+            time_posted, round(float(price), 2), numPassengers)
     print(query)
     db.session.execute(query)
     db.session.commit()
-
-def deleteBid():
-    pass
