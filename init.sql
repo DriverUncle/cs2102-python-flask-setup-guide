@@ -7,7 +7,7 @@ DROP TABLE IF EXISTS Passenger CASCADE;
 DROP TABLE IF EXISTS Model CASCADE;
 DROP TABLE IF EXISTS Car CASCADE;
 DROP TABLE IF EXISTS Promo CASCADE;
-DROP TABLE IF EXISTS Scheduled_Ride CASCADE;
+DROP TABLE IF EXISTS Ride CASCADE;
 DROP TABLE IF EXISTS Place CASCADE;
 DROP TABLE IF EXISTS Advertisement CASCADE;
 DROP TABLE IF EXISTS Creates CASCADE;
@@ -94,7 +94,7 @@ CREATE TABLE Bids (
     CHECK       (status = 'ongoing' OR status = 'successful' OR status = 'failed')
 );
 
-CREATE TABLE Scheduled_Ride (
+CREATE TABLE Ride (
     ride_ID        SERIAL      PRIMARY KEY,
     passenger_ID   varchar(50) NOT NULL,
     driver_ID      varchar(50) NOT NULL,
@@ -106,7 +106,7 @@ CREATE TABLE Scheduled_Ride (
 );
 
 CREATE TABLE Review (
-    rideID      INTEGER PRIMARY KEY REFERENCES Scheduled_Ride ON DELETE CASCADE,
+    rideID      INTEGER PRIMARY KEY REFERENCES Ride ON DELETE CASCADE,
     p_comment   varchar(50),
     p_rating    INTEGER,
     d_comment   varchar(50),
@@ -114,7 +114,7 @@ CREATE TABLE Review (
 );
 
 CREATE TABLE Redeems (
-    ride_ID       INTEGER     PRIMARY KEY  REFERENCES Scheduled_Ride,
+    ride_ID       INTEGER     PRIMARY KEY  REFERENCES Ride,
     promo_code    varchar(20) NOT NULL     REFERENCES Promo,
     username      varchar(50) NOT NULL     REFERENCES Passenger
 );
@@ -339,8 +339,8 @@ INSERT INTO Bids VALUES ('user14', 'user2', TIMESTAMP '2018-12-10 12:30', 20, 'o
 INSERT INTO Bids VALUES ('user15', 'user2', TIMESTAMP '2018-12-10 12:30', 30, 'ongoing', 2);
 
 -- Ride: rideID(NULL), passID, driverID, timePosted, status
-INSERT INTO Scheduled_Ride VALUES(DEFAULT, 'user11', 'user3', TIMESTAMP '2019-12-12 12:30', DEFAULT);
-INSERT INTO Scheduled_Ride VALUES(DEFAULT, 'user14', 'user2', TIMESTAMP '2019-12-12 12:30', 'ongoing');
+INSERT INTO Ride VALUES(DEFAULT, 'user11', 'user3', TIMESTAMP '2019-12-12 12:30', DEFAULT);
+INSERT INTO Ride VALUES(DEFAULT, 'user14', 'user2', TIMESTAMP '2019-12-12 12:30', 'ongoing');
 
 -- Owns: driverID, plateNum
 INSERT INTO Owns VALUES ('user1', 'SFV7687J');

@@ -66,21 +66,26 @@
                         <td>{{ ad[8] }}</td>
                         <td>
                             <button type="button" class="btn btn-outline-dark bid-button" data-did="{{ ad[2] }}"
-                                    data-dateposted="{{ ad[0] }}" data-maxPax="{{ ad[5] }}">Bid
+                                    data-dateposted="{{ ad[0] }}" data-maxPax="{{ ad[5] }}"
+                                    onclick="makeBid('{{ ad[2] }}', '{{ current_user.username }}', '{{ ad[0] }}', '{{ ad[5] }}')">Bid
                             </button>
                             <script>
-                                $('.bid-button').click(function () {
-                                    var did = $(this).attr('data-did');
-                                    var dateposted = $(this).attr('data-dateposted');
-                                    $('#bid-modal').modal({
-                                        show: true
-                                    });
+                                function makeBid(did, pid, datePosted, maxPax) {
+                                    if (did === pid) {
+                                        alert("You can't bid for yourself!");
+                                    }
+                                    else {
+                                        $('#bid-modal').modal({
+                                            show: true
+                                        });
 
-                                    // Setting the hidden value so that the other HTML can use
-                                    $("input[name=hidden_did]").val(did);
-                                    $("input[name=hidden_dateposted]").val(dateposted);
-                                    $("input[name=hidden_maxPax]").val($(this).attr('data-maxPax'));
-                                });</script>
+                                        // Setting the hidden value so that the other HTML can use
+                                        $("input[name=hidden_did]").val(did);
+                                        $("input[name=hidden_dateposted]").val(datePosted);
+                                        $("input[name=hidden_maxPax]").val(maxPax);
+                                    }
+                                }
+                            </script>
                         </td>
                     </tr>
                 {% endfor %}
