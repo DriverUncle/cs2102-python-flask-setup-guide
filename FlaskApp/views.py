@@ -265,5 +265,13 @@ def render_privileged_page():
 ####
 # BID RELATED FUNCTIONALITIES
 ####
-
+@view.route("/delete_bid", methods=["GET", "POST"])
+def delete_bid():
+    print('request.form: ', request.form)
+    query = "DELETE FROM Bids WHERE (passenger_ID, time_posted, driver_ID) = ('{}', '{}', '{}')"\
+        .format(current_user.username, request.form['dateposted'], request.form['driver_id'])
+    print(query)
+    db.session.execute(query)
+    db.session.commit()
+    return redirect("/")
 

@@ -123,7 +123,23 @@
                         <td>{{ bid[6] }}</td>
                         <td>{{ bid[7] }}</td>
                         <td>
-                            <button type="button" class="btn delete-button">Delete</button>
+                            <button type="button" class="btn delete-button" 
+                            onclick="deleteBid('{{ bid[2] }}', '{{ bid[0] }}')">Delete</button>
+                            <script>
+                                function deleteBid(driverID, datePosted) {
+                                    alert("deleting bid: " + driverID + ", " + datePosted)
+                                    $.ajax({
+                                        type: "POST",
+                                        url: "/delete_bid",
+                                        data: {driver_id: driverID, dateposted: datePosted},
+                                        dataType: "text",
+                                        success: function(data) {
+                                            alert("Successfully removed bid.");
+                                            location.reload();
+                                        }
+                                    });
+                                }
+                            </script>
                         </td>
                     </tr>
                 {% endfor %}

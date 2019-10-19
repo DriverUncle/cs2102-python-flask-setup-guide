@@ -83,3 +83,6 @@ class BidForm(FlaskForm):
         render_kw={'placeholder': 'no. of passengers'}
     )
 
+class CurrentBidForm(FlaskForm):
+    hidden_did = HiddenField()
+    hidden_dateposted = HiddenField()

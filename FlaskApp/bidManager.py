@@ -26,3 +26,6 @@ def makeBid(passenger_id, time_posted, driver_id, price, numPassengers):
     print(query)
     db.session.execute(query)
     db.session.commit()
+
+def deleteBid():
+    pass
