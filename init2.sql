@@ -573,4 +573,4 @@ INSERT INTO Owns VALUES ('Harley', 'BC8888');
 INSERT INTO Owns VALUES ('Isabella', 'C8888');
 INSERT INTO Owns VALUES ('Joseph', 'ABC8888');
 INSERT INTO Owns VALUES ('teo', '007');
-INSERT INTO Owns VALUES ('Adiyogaisthebest', 'GiveMeA'); 
+INSERT INTO Owns VALUES ('Adiyogaisthebest', 'GiveMeA');
