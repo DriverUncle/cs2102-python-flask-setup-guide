@@ -479,6 +479,8 @@ INSERT INTO Advertisement VALUES (TIMESTAMP '2018-12-20 12:31', 'Beng', 2, TIMES
 INSERT INTO Advertisement VALUES (TIMESTAMP '2018-12-21 12:31', 'Adiyogaisthebest', 2, TIMESTAMP '2019-11-13 12:30', 20, 'Jurong East', 'Pasir Ris', 'Active');
 INSERT INTO Advertisement VALUES (TIMESTAMP '2018-12-22 12:31', 'Adiyogaisthebest', 2, TIMESTAMP '2019-12-13 12:30', 20, 'Jurong East', 'Pasir Ris', 'Scheduled');
 INSERT INTO Advertisement VALUES (TIMESTAMP '2018-12-23 12:31', 'Adiyogaisthebest', 2, TIMESTAMP '2019-12-14 12:30', 20, 'Jurong East', 'Pasir Ris', 'Scheduled');
+INSERT INTO Advertisement VALUES (TIMESTAMP '2018-11-13 12:31', 'teo', 2, TIMESTAMP '2018-11-14 12:30', 20, 'Jurong East', 'Pasir Ris', 'Scheduled');
+INSERT INTO Advertisement VALUES (TIMESTAMP '2018-11-03 12:31', 'teo', 2, TIMESTAMP '2018-11-04 12:30', 20, 'Jurong East', 'Pasir Ris', 'Scheduled');
 
 -- Bids: passId, driverID, timePosted, price, status, numPass
 INSERT INTO Bids VALUES ('James', 'Chew', TIMESTAMP '2018-12-10 12:30', 20, 'failed', 2);
@@ -515,6 +517,8 @@ INSERT INTO Bids VALUES ('Ali', 'Adiyogaisthebest', TIMESTAMP '2018-12-21 12:31'
 INSERT INTO Bids VALUES ('Chew', 'Harley', TIMESTAMP '2018-12-21 12:31', 30, 'successful', 2);
 INSERT INTO Bids VALUES ('Beng', 'Adiyogaisthebest', TIMESTAMP '2018-12-22 12:31', 30, 'successful', 2);
 INSERT INTO Bids VALUES ('Adi', 'Adiyogaisthebest', TIMESTAMP '2018-12-23 12:31', 30, 'successful', 2);
+INSERT INTO Bids VALUES ('James', 'teo', TIMESTAMP '2018-11-13 12:31', 30, 'successful', 2);
+INSERT INTO Bids VALUES ('James', 'teo', TIMESTAMP '2018-11-03 12:31', 30, 'successful', 2);
 
 -- Ride: rideID(NULL), passID, driverID, timePosted, status, p_rating, p_comment, d_rating, d_comment
 INSERT INTO Ride VALUES(DEFAULT, 'Jin Yao', 'Chew', TIMESTAMP '2018-12-10 12:30', DEFAULT, DEFAULT, NULL, NULL, NULL, NULL);
@@ -534,6 +538,8 @@ INSERT INTO Ride VALUES(DEFAULT, 'Beng', 'Isabella', TIMESTAMP '2018-12-19 12:31
 INSERT INTO Ride VALUES(DEFAULT, 'Adi', 'Joseph', TIMESTAMP '2018-12-20 12:31', DEFAULT, DEFAULT, NULL, NULL, NULL, NULL);
 INSERT INTO Ride VALUES(DEFAULT, 'Beng', 'Adiyogaisthebest', TIMESTAMP '2018-12-22 12:31', DEFAULT, DEFAULT, NULL, NULL, NULL, NULL);
 INSERT INTO Ride VALUES(DEFAULT, 'Adi', 'Adiyogaisthebest', TIMESTAMP '2018-12-23 12:31', DEFAULT, DEFAULT, NULL, NULL, NULL, NULL);
+INSERT INTO Ride VALUES(DEFAULT, 'James', 'teo', TIMESTAMP '2018-11-13 12:31', DEFAULT, DEFAULT, NULL, NULL, NULL, NULL);
+INSERT INTO Ride VALUES(DEFAULT, 'James', 'teo', TIMESTAMP '2018-11-03 12:31', DEFAULT, DEFAULT, NULL, NULL, NULL, NULL);
 UPDATE Ride SET p_rating = 5, p_comment = 'he was great' WHERE ride_id = 3;
 UPDATE Ride SET d_rating = 5, d_comment = 'he was okay' WHERE ride_id = 3;
 UPDATE Ride SET p_rating = 2, p_comment = 'he was noisy af' WHERE ride_id = 4;
@@ -558,8 +564,12 @@ UPDATE Ride SET p_rating = 4, p_comment = 'GOOD passenger' WHERE ride_id = 13;
 UPDATE Ride SET d_rating = 1, d_comment = 'worse driver ever' WHERE ride_id = 13;
 UPDATE Ride SET p_rating = 5, p_comment = 'As a passenger he was on time.' WHERE ride_id = 16;
 UPDATE Ride SET d_rating = 5, d_comment = 'He was the best driver ever. Super nice!' WHERE ride_id = 16;
-UPDATE Ride SET p_rating = 5, p_comment = 'Great' WHERE ride_id = 17;
+UPDATE Ride SET p_rating = 5, p_comment = 'Solid' WHERE ride_id = 17;
 UPDATE Ride SET d_rating = 5, d_comment = 'Driver nya ganteng sekali...' WHERE ride_id = 17;
+UPDATE Ride SET p_rating = 5, p_comment = 'Hes the best' WHERE ride_id = 18;
+UPDATE Ride SET d_rating = 5, d_comment = 'Nice guy' WHERE ride_id = 18;
+UPDATE Ride SET p_rating = 5, p_comment = 'Awesome' WHERE ride_id = 19;
+UPDATE Ride SET d_rating = 5, d_comment = 'good' WHERE ride_id = 19;
 
 -- Owns: driverID, plateNum
 INSERT INTO Owns VALUES ('Adi', 'SFV7687J');
