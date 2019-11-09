@@ -238,7 +238,7 @@ insert into App_User values ('Fred', 'Weasley', 'Fred', 'password', 2055996866);
 insert into App_User values ('Georgina', 'Georgina', 'Tan', 'password', 3029039526);
 insert into App_User values ('Harley', 'Harley', 'Morgue', 'password', 5377426205);
 insert into App_User values ('Isabella', 'Marius', 'Reavell', 'password', 9725999259);
-insert into App_User values ('Joesph', 'Pennie', 'Nelle', 'password', 2645471052);
+insert into App_User values ('Joseph', 'Schooling', 'Joseph', 'password', 2645471052);
 insert into App_User values ('James', 'James', 'Pang', 'password', 5185617186);
 insert into App_User values ('Shuyuan', 'Shuyuan', 'Jin', 'password', 9182609085);
 insert into App_User values ('Jin Yao', 'Jin Yao', 'Tan', 'password', 5544703777);
@@ -250,7 +250,7 @@ insert into App_User values ('Ruffalo', 'Mark', 'Ruffalo', 'password', 479400107
 insert into App_User values ('scarjo', 'scarlett', 'johansson', 'password', 9435003533);
 insert into App_User values ('iamironman', 'Robert Downey', 'Jr.', 'password', 6749453810);
 insert into App_User values ('teo', 'Shawn', 'teo', 'teo', 12345678);
-insert into App_User values ('Adiyogaisthebest', 'Adi', 'Yoga', 'password', 12345678);
+insert into App_User values ('Adiyogaisthebest', 'Adi', 'Yoga', 'cs2102bestprof', 12345678);
 
 -- Passenger: username
 
@@ -263,7 +263,7 @@ insert into Passenger values ('Fred');
 insert into Passenger values ('Georgina');
 insert into Passenger values ('Harley');
 insert into Passenger values ('Isabella');
-insert into Passenger values ('Joesph');
+insert into Passenger values ('Joseph');
 insert into Passenger values ('James');
 insert into Passenger values ('Shuyuan');
 insert into Passenger values ('Jin Yao');
@@ -291,7 +291,7 @@ INSERT INTO Driver VALUES ('Fred', NULL);
 INSERT INTO Driver VALUES ('Georgina', NULL);
 INSERT INTO Driver VALUES ('Harley', NULL);
 INSERT INTO Driver VALUES ('Isabella', NULL);
-INSERT INTO Driver VALUES ('Joesph', NULL);
+INSERT INTO Driver VALUES ('Joseph', NULL);
 INSERT INTO Driver VALUES ('teo', NULL);
 INSERT INTO Driver VALUES ('Adiyogaisthebest', NULL);
 
@@ -453,7 +453,7 @@ INSERT INTO Place VALUES ('Upper Changi');
 -- Advertisement: timePosted(DEFAULT), driverID, numPass, departTime, price, to, from, ad_status
 INSERT INTO Advertisement VALUES (TIMESTAMP '2019-10-10 12:30', 'Fred', 2, TIMESTAMP '2019-12-12 12:30', 20, 'Clementi', 'Pasir Ris', 'Active');
 INSERT INTO Advertisement VALUES (TIMESTAMP '2019-10-19 12:30', 'Isabella', 2, TIMESTAMP '2019-12-12 12:30', 20, 'Jurong East', 'Changi Airport', 'Active');
-INSERT INTO Advertisement VALUES (TIMESTAMP '2019-10-20 12:30', 'Joesph', 2, TIMESTAMP '2019-12-12 12:30', 20, 'Jurong East', 'Pasir Ris', 'Active');
+INSERT INTO Advertisement VALUES (TIMESTAMP '2019-10-20 12:30', 'Joseph', 2, TIMESTAMP '2019-12-12 12:30', 20, 'Jurong East', 'Pasir Ris', 'Active');
 INSERT INTO Advertisement VALUES (TIMESTAMP '2018-12-10 12:30', 'Adi', 2, TIMESTAMP '2019-12-12 12:34', 20, 'Joo Koon', 'Bendemeer', 'Active');
 INSERT INTO Advertisement VALUES (TIMESTAMP '2018-12-10 12:30', 'Beng', 2, TIMESTAMP '2019-12-12 12:30', 20, 'Changi Airport', 'Paya Lebar', 'Active');
 INSERT INTO Advertisement VALUES (TIMESTAMP '2018-12-10 12:30', 'Chew', 2, TIMESTAMP '2019-12-12 12:30', 20, 'Joo Koon', 'Pasir Ris', 'Scheduled');
@@ -463,8 +463,8 @@ INSERT INTO Advertisement VALUES (TIMESTAMP '2018-12-10 12:30', 'Fred', 2, TIMES
 INSERT INTO Advertisement VALUES (TIMESTAMP '2018-12-17 12:30', 'Georgina', 2, TIMESTAMP '2019-12-12 12:30', 20, 'Jurong East', 'Pasir Ris', 'Active');
 INSERT INTO Advertisement VALUES (TIMESTAMP '2018-12-18 12:30', 'Harley', 2, TIMESTAMP '2019-12-12 12:30', 20, 'Jurong East', 'Pasir Ris', 'Active');
 INSERT INTO Advertisement VALUES (TIMESTAMP '2018-12-19 12:30', 'Isabella', 2, TIMESTAMP '2019-12-12 12:30', 20, 'Jurong East', 'Pasir Ris', 'Scheduled');
-INSERT INTO Advertisement VALUES (TIMESTAMP '2018-12-20 12:30', 'Joesph', 2, TIMESTAMP '2019-12-12 12:30', 20, 'Jurong East', 'Pasir Ris', 'Scheduled');
-INSERT INTO Advertisement VALUES (TIMESTAMP '2018-12-21 12:30', 'Joesph', 2, TIMESTAMP '2019-12-15 12:30', 20, 'Jurong East', 'Pasir Ris', 'Scheduled');
+INSERT INTO Advertisement VALUES (TIMESTAMP '2018-12-20 12:30', 'Joseph', 2, TIMESTAMP '2019-12-12 12:30', 20, 'Jurong East', 'Pasir Ris', 'Scheduled');
+INSERT INTO Advertisement VALUES (TIMESTAMP '2018-12-21 12:30', 'Joseph', 2, TIMESTAMP '2019-12-15 12:30', 20, 'Jurong East', 'Pasir Ris', 'Scheduled');
 INSERT INTO Advertisement VALUES (TIMESTAMP '2018-12-10 12:31', 'Adi', 2, TIMESTAMP '2019-12-12 12:34', 20, 'Joo Koon', 'Bendemeer', 'Scheduled');
 INSERT INTO Advertisement VALUES (TIMESTAMP '2018-12-10 12:31', 'Beng', 2, TIMESTAMP '2019-12-12 12:30', 20, 'Changi Airport', 'Paya Lebar', 'Scheduled');
 INSERT INTO Advertisement VALUES (TIMESTAMP '2018-12-10 12:31', 'Chew', 2, TIMESTAMP '2019-12-12 12:30', 20, 'Joo Koon', 'Pasir Ris', 'Scheduled');
@@ -474,7 +474,7 @@ INSERT INTO Advertisement VALUES (TIMESTAMP '2018-12-10 12:31', 'Fred', 2, TIMES
 INSERT INTO Advertisement VALUES (TIMESTAMP '2018-12-17 12:31', 'Georgina', 2, TIMESTAMP '2019-12-12 12:30', 20, 'Jurong East', 'Pasir Ris', 'Scheduled');
 INSERT INTO Advertisement VALUES (TIMESTAMP '2018-12-18 12:31', 'Harley', 2, TIMESTAMP '2019-12-12 12:30', 20, 'Jurong East', 'Pasir Ris', 'Scheduled');
 INSERT INTO Advertisement VALUES (TIMESTAMP '2018-12-19 12:31', 'Isabella', 2, TIMESTAMP '2019-12-12 12:30', 20, 'Jurong East', 'Pasir Ris', 'Scheduled');
-INSERT INTO Advertisement VALUES (TIMESTAMP '2018-12-20 12:31', 'Joesph', 2, TIMESTAMP '2019-12-12 12:30', 20, 'Jurong East', 'Pasir Ris', 'Scheduled');
+INSERT INTO Advertisement VALUES (TIMESTAMP '2018-12-20 12:31', 'Joseph', 2, TIMESTAMP '2019-12-12 12:30', 20, 'Jurong East', 'Pasir Ris', 'Scheduled');
 INSERT INTO Advertisement VALUES (TIMESTAMP '2018-12-21 12:31', 'Adiyogaisthebest', 2, TIMESTAMP '2019-12-12 12:30', 20, 'Jurong East', 'Pasir Ris', 'Active');
 INSERT INTO Advertisement VALUES (TIMESTAMP '2018-12-22 12:31', 'Adiyogaisthebest', 2, TIMESTAMP '2019-12-13 12:30', 20, 'Jurong East', 'Pasir Ris', 'Scheduled');
 INSERT INTO Advertisement VALUES (TIMESTAMP '2018-12-23 12:31', 'Adiyogaisthebest', 2, TIMESTAMP '2019-12-14 12:30', 20, 'Jurong East', 'Pasir Ris', 'Scheduled');
@@ -497,9 +497,9 @@ INSERT INTO Bids VALUES ('Harley', 'Danny', TIMESTAMP '2018-12-10 12:30', 30, 'o
 INSERT INTO Bids VALUES ('Shuyuan', 'Georgina', TIMESTAMP '2018-12-17 12:30', 20, 'ongoing', 2);
 INSERT INTO Bids VALUES ('Chew', 'Harley', TIMESTAMP '2018-12-18 12:30', 30, 'ongoing', 2);
 INSERT INTO Bids VALUES ('Shuyuan', 'Isabella', TIMESTAMP '2018-12-19 12:30', 20, 'successful', 2);
-INSERT INTO Bids VALUES ('Chew', 'Joesph', TIMESTAMP '2018-12-20 12:30', 30, 'successful', 2);
-INSERT INTO Bids VALUES ('Chew', 'Joesph', TIMESTAMP '2018-12-21 12:30', 30, 'successful', 2);
-INSERT INTO Bids VALUES ('Joesph', 'Adi', TIMESTAMP '2018-12-10 12:31', 20, 'successful', 2);
+INSERT INTO Bids VALUES ('Chew', 'Joseph', TIMESTAMP '2018-12-20 12:30', 30, 'successful', 2);
+INSERT INTO Bids VALUES ('Chew', 'Joseph', TIMESTAMP '2018-12-21 12:30', 30, 'successful', 2);
+INSERT INTO Bids VALUES ('Joseph', 'Adi', TIMESTAMP '2018-12-10 12:31', 20, 'successful', 2);
 INSERT INTO Bids VALUES ('Isabella', 'Beng', TIMESTAMP '2018-12-10 12:31', 30, 'successful', 2);
 INSERT INTO Bids VALUES ('Harley', 'Chew', TIMESTAMP '2018-12-10 12:31', 30, 'successful', 2);
 INSERT INTO Bids VALUES ('Georgina', 'Danny', TIMESTAMP '2018-12-10 12:31', 20, 'successful', 2);
@@ -508,7 +508,7 @@ INSERT INTO Bids VALUES ('Emil', 'Fred', TIMESTAMP '2018-12-10 12:31', 30, 'succ
 INSERT INTO Bids VALUES ('Danny', 'Georgina', TIMESTAMP '2018-12-17 12:31', 20, 'successful', 2);
 INSERT INTO Bids VALUES ('Chew', 'Harley', TIMESTAMP '2018-12-18 12:31', 30, 'successful', 2);
 INSERT INTO Bids VALUES ('Beng', 'Isabella', TIMESTAMP '2018-12-19 12:31', 30, 'successful', 2);
-INSERT INTO Bids VALUES ('Adi', 'Joesph', TIMESTAMP '2018-12-20 12:31', 30, 'successful', 2);
+INSERT INTO Bids VALUES ('Adi', 'Joseph', TIMESTAMP '2018-12-20 12:31', 30, 'successful', 2);
 INSERT INTO Bids VALUES ('Emil', 'Adiyogaisthebest', TIMESTAMP '2018-12-21 12:31', 30, 'ongoing', 2);
 INSERT INTO Bids VALUES ('Beng', 'Adiyogaisthebest', TIMESTAMP '2018-12-22 12:31', 30, 'successful', 2);
 INSERT INTO Bids VALUES ('Adi', 'Adiyogaisthebest', TIMESTAMP '2018-12-23 12:31', 30, 'successful', 2);
@@ -517,9 +517,9 @@ INSERT INTO Bids VALUES ('Adi', 'Adiyogaisthebest', TIMESTAMP '2018-12-23 12:31'
 INSERT INTO Ride VALUES(DEFAULT, 'Jin Yao', 'Chew', TIMESTAMP '2018-12-10 12:30', DEFAULT, DEFAULT, NULL, NULL, NULL, NULL);
 INSERT INTO Ride VALUES(DEFAULT, 'Georgina', 'Fred', TIMESTAMP '2018-12-10 12:30', DEFAULT, DEFAULT, NULL, NULL, NULL, NULL);
 INSERT INTO Ride VALUES(DEFAULT, 'Shuyuan', 'Isabella', TIMESTAMP '2018-12-19 12:30', DEFAULT, DEFAULT, NULL, NULL, NULL, NULL);
-INSERT INTO Ride VALUES(DEFAULT, 'Chew', 'Joesph', TIMESTAMP '2018-12-20 12:30', DEFAULT, DEFAULT, NULL, NULL, NULL, NULL);
-INSERT INTO Ride VALUES(DEFAULT, 'Chew', 'Joesph', TIMESTAMP '2018-12-20 12:30', DEFAULT, DEFAULT, NULL, NULL, NULL, NULL);
-INSERT INTO Ride VALUES(DEFAULT, 'Joesph', 'Adi', TIMESTAMP '2018-12-10 12:31', DEFAULT, DEFAULT, NULL, NULL, NULL, NULL);
+INSERT INTO Ride VALUES(DEFAULT, 'Chew', 'Joseph', TIMESTAMP '2018-12-20 12:30', DEFAULT, DEFAULT, NULL, NULL, NULL, NULL);
+INSERT INTO Ride VALUES(DEFAULT, 'Chew', 'Joseph', TIMESTAMP '2018-12-20 12:30', DEFAULT, DEFAULT, NULL, NULL, NULL, NULL);
+INSERT INTO Ride VALUES(DEFAULT, 'Joseph', 'Adi', TIMESTAMP '2018-12-10 12:31', DEFAULT, DEFAULT, NULL, NULL, NULL, NULL);
 INSERT INTO Ride VALUES(DEFAULT, 'Isabella', 'Beng', TIMESTAMP '2018-12-10 12:31', DEFAULT, DEFAULT, NULL, NULL, NULL, NULL);
 INSERT INTO Ride VALUES(DEFAULT, 'Harley', 'Chew', TIMESTAMP '2018-12-10 12:31', DEFAULT, DEFAULT, NULL, NULL, NULL, NULL);
 INSERT INTO Ride VALUES(DEFAULT, 'Georgina', 'Danny', TIMESTAMP '2018-12-10 12:31', DEFAULT, DEFAULT, NULL, NULL, NULL, NULL);
@@ -528,7 +528,7 @@ INSERT INTO Ride VALUES(DEFAULT, 'Emil', 'Fred', TIMESTAMP '2018-12-10 12:31', D
 INSERT INTO Ride VALUES(DEFAULT, 'Danny', 'Georgina', TIMESTAMP '2018-12-17 12:31', DEFAULT, DEFAULT, NULL, NULL, NULL, NULL);
 INSERT INTO Ride VALUES(DEFAULT, 'Chew', 'Harley', TIMESTAMP '2018-12-18 12:31', DEFAULT, DEFAULT, NULL, NULL, NULL, NULL);
 INSERT INTO Ride VALUES(DEFAULT, 'Beng', 'Isabella', TIMESTAMP '2018-12-19 12:31', DEFAULT, DEFAULT, NULL, NULL, NULL, NULL);
-INSERT INTO Ride VALUES(DEFAULT, 'Adi', 'Joesph', TIMESTAMP '2018-12-20 12:31', DEFAULT, DEFAULT, NULL, NULL, NULL, NULL);
+INSERT INTO Ride VALUES(DEFAULT, 'Adi', 'Joseph', TIMESTAMP '2018-12-20 12:31', DEFAULT, DEFAULT, NULL, NULL, NULL, NULL);
 INSERT INTO Ride VALUES(DEFAULT, 'Beng', 'Adiyogaisthebest', TIMESTAMP '2018-12-22 12:31', DEFAULT, DEFAULT, NULL, NULL, NULL, NULL);
 INSERT INTO Ride VALUES(DEFAULT, 'Adi', 'Adiyogaisthebest', TIMESTAMP '2018-12-23 12:31', DEFAULT, DEFAULT, NULL, NULL, NULL, NULL);
 UPDATE Ride SET p_rating = 5, p_comment = 'he was great' WHERE ride_id = 3;
@@ -536,7 +536,7 @@ UPDATE Ride SET d_rating = 5, d_comment = 'he was okay' WHERE ride_id = 3;
 UPDATE Ride SET p_rating = 2, p_comment = 'he was noisy af' WHERE ride_id = 4;
 UPDATE Ride SET d_rating = 4, d_comment = 'he was a good listener' WHERE ride_id = 4;
 UPDATE Ride SET p_rating = 3, p_comment = 'this guy again...' WHERE ride_id = 5;
-UPDATE Ride SET d_rating = 1, d_comment = 'this time he was not a good listener' WHERE ride_id = 5;
+UPDATE Ride SET d_rating = 1, d_comment = 'eh i think he better at swimming' WHERE ride_id = 5;
 UPDATE Ride SET p_rating = 5, p_comment = 'would recommend' WHERE ride_id = 6;
 UPDATE Ride SET d_rating = 5, d_comment = '10/10' WHERE ride_id = 6;
 UPDATE Ride SET p_rating = 2, p_comment = 'he was quiet' WHERE ride_id = 7;
@@ -568,6 +568,6 @@ INSERT INTO Owns VALUES ('Fred', 'CCC8888');
 INSERT INTO Owns VALUES ('Georgina', 'CCC8888');
 INSERT INTO Owns VALUES ('Harley', 'BC8888');
 INSERT INTO Owns VALUES ('Isabella', 'C8888');
-INSERT INTO Owns VALUES ('Joesph', 'ABC8888');
+INSERT INTO Owns VALUES ('Joseph', 'ABC8888');
 INSERT INTO Owns VALUES ('teo', '007');
-INSERT INTO Owns VALUES ('Adiyogaisthebest', 'GiveMeA');
+INSERT INTO Owns VALUES ('Adiyogaisthebest', 'GiveMeA'); 
