@@ -9,13 +9,13 @@ import datetime
 
 
 # Returns the list of ads according to list of keywords. 
-def get_filtered_ads(keywords):
+def get_filtered_ads(keywords, username):
     ad_list_query = "SELECT a.time_posted::timestamp(0) as date_posted, a.departure_time::timestamp(0) as departure_time, " \
                     "a.driver_id, (SELECT d_rating FROM Driver WHERE username = a.driver_id), a.from_place, a.to_place, a.num_passengers, a.price, " \
                     "(SELECT max(price) from bids b where b.time_posted = a.time_posted and b.driver_id = a.driver_id) as highest_bid," \
                     "(SELECT count(*) from bids b where b.time_posted = a.time_posted and b.driver_id = a.driver_id) as num_bidders," \
                     "(a.departure_time::timestamp(0) - CURRENT_TIMESTAMP::timestamp(0) - '30 minutes'::interval) as time_remaining" \
-                    " from advertisement a where a.departure_time > (CURRENT_TIMESTAMP + '30 minutes'::interval) and ad_status = 'Active' "
+                    " from advertisement a where a.departure_time > (CURRENT_TIMESTAMP + '30 minutes'::interval) and ad_status = 'Active' and a.driver_id <> '{}'".format(username)
     
     # Append search term if keywords isn't empty
     if (len(keywords) != 0):

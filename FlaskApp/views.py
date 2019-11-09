@@ -27,7 +27,7 @@ def render_home_page():
         if outstanding_ride_id:
             return redirect("/payment/{}".format(int(outstanding_ride_id[0])))
 
-        ad_list = get_filtered_ads(keywords=[])
+        ad_list = get_filtered_ads(keywords=[], username=current_user.username)
 
         bid_list_query = "select a.time_posted::timestamp(0) as date_posted, a.departure_time::timestamp(0) as departure_time, " \
                          "a.driver_id, a.from_place, a.to_place, b.no_passengers, b.price as bid_price, b.status " \
@@ -42,7 +42,7 @@ def render_home_page():
         form.price.errors = ''
         if request.method == "POST" and 'searchButton' in request.form:
             search_keywords = request.form['search'].split()
-            ad_list = get_filtered_ads(search_keywords)
+            ad_list = get_filtered_ads(search_keywords, current_user.username)
         elif form.is_submitted():
             price = form.price.data
             no_passengers = form.no_passengers.data
@@ -59,7 +59,9 @@ def render_home_page():
                     form.price.errors.append(
                         'Bidding price should be higher than the minimum price of {}.'.format(min_price))
                 else:
-                    makeBid(current_user.username, time_posted, driver_id, price, no_passengers)
+                    error_message = makeBid(current_user.username, time_posted, driver_id, price, no_passengers)
+                    if error_message:
+                        form.price.errors.append(error_message)
                     return redirect("/")
 
         return render_template("home.html", form=form, current_user=current_user, ad_list=ad_list, bid_list=bid_list)
