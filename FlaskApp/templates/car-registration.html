@@ -20,6 +20,29 @@
     <div class="car-registration-title white-font">
         <h3 class="text-align-center">Add your car details and you'll be ready to start sharing rides!</h3>
     </div>
+    <div class="error-summary errorMessage">
+        {% if register_error %}
+        You don't have a car now. Please register a car here.
+        {% endif %}
+        {% if empty_error %}
+        Input can't be empty! Must fill in all the fields!
+        {% endif %}
+        {% if car_model_error %}
+        The car brand and model don't exist!
+        {% endif %}
+        {% if exist_car_error %}
+        You have already registered this car!
+        {% endif %}
+        {% if not_same_car_error %}
+        Other people have registered for this car. But the information you provided for this car is different.
+        {% endif %}
+        {% if negative_passenger_error %}
+        Number of passenger must be positive!
+        {% endif %}
+        {% if success %}
+        You have successfully registered this car!
+        {% endif %}
+    </div>
     <form class="car-registration-form" method="post">
         <div class="form-row white-font">
             <div class="form-group col-md-6">
@@ -44,27 +67,6 @@
         <div class="form-row white-font">
             <button type="submit" class="btn btn-outline-dark" formmethod="post">Add Car</button>
         </div>
-        {% if register_error %}
-        You don't have a car now. Please register a car here.
-        {% endif %}
-        {% if empty_error %}
-        Input can't be empty! Must fill in all the fields!
-        {% endif %}
-        {% if car_model_error %}
-        The car brand and model don't exist!
-        {% endif %}
-        {% if exist_car_error %}
-        You have already registered this car!
-        {% endif %}
-        {% if not_same_car_error %}
-        Other people have registered for this car. But the information you provided for this car is not the same.
-        {% endif %}
-        {% if negative_passenger_error %}
-        Number of passenger must be positive!
-        {% endif %}
-        {% if success %}
-        You have successfully registered this car!
-        {% endif %}
     </form>
 </div>
 </body>
