@@ -38,18 +38,18 @@ CREATE TABLE Passenger (
 );
 
 CREATE TABLE Car (
-    plate_number varchar(20) PRIMARY KEY,
-    colour      varchar(20) NOT NULL,
-    brand         varchar(20) NOT NULL,
-    no_passengers        INTEGER NOT NULL,
+    plate_number    varchar(20) PRIMARY KEY,
+    colour          varchar(20) NOT NULL,
+    brand           varchar(20) NOT NULL,
+    no_passengers   INTEGER NOT NULL,
     CHECK(no_passengers >= 1)
 );
 
 CREATE TABLE Promo (
-    promo_code   varchar(20) PRIMARY KEY,
+    promo_code  varchar(20) PRIMARY KEY,
     max_quota   INTEGER NOT NULL,
-    min_price    INTEGER,
-    discount     INTEGER NOT NULL
+    min_price   INTEGER,
+    discount    INTEGER NOT NULL
 );
 
 CREATE TABLE Place (
@@ -130,7 +130,7 @@ EXECUTE PROCEDURE update_bid_failed();
 
 CREATE OR REPLACE FUNCTION update_bid_status_to_fail()
 RETURNS TRIGGER AS $$ BEGIN
-    RAISE NOTICE 'Updating all bids for % %', NEW.driver_ID, NEW.time_posted;
+    RAISE NOTICE 'Updating all non-winning bids for % % to failed', NEW.driver_ID, NEW.time_posted;
     UPDATE Bids AS b SET status = 'failed' 
     WHERE (b.time_posted, b.driver_ID) = (NEW.time_posted, NEW.driver_ID) AND b.status = 'ongoing';
     RETURN NULL;
@@ -138,7 +138,7 @@ END; $$ LANGUAGE plpgsql;
 
 CREATE OR REPLACE FUNCTION update_ad_bid_on_successful_bid()
 RETURNS TRIGGER AS $$ BEGIN
-    RAISE NOTICE 'Updating all bids for % % to fail after a successful bid', NEW.driver_ID, NEW.time_posted;
+    RAISE NOTICE 'Updating advertisement for % % to Scheudled after a successful bid', NEW.driver_ID, NEW.time_posted;
     UPDATE Advertisement a SET ad_status = 'Scheduled'
         WHERE (a.time_posted, a.driver_ID) = (NEW.time_posted, NEW.driver_ID);
     RETURN NULL;
