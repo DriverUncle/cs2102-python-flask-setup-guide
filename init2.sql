@@ -475,6 +475,7 @@ INSERT INTO Advertisement VALUES (TIMESTAMP '2018-12-17 12:31', 'Georgina', 2, T
 INSERT INTO Advertisement VALUES (TIMESTAMP '2018-12-18 12:31', 'Harley', 2, TIMESTAMP '2019-12-12 12:30', 20, 'Jurong East', 'Pasir Ris', 'Scheduled');
 INSERT INTO Advertisement VALUES (TIMESTAMP '2018-12-19 12:31', 'Isabella', 2, TIMESTAMP '2019-12-12 12:30', 20, 'Jurong East', 'Pasir Ris', 'Scheduled');
 INSERT INTO Advertisement VALUES (TIMESTAMP '2018-12-20 12:31', 'Joseph', 2, TIMESTAMP '2019-12-12 12:30', 20, 'Jurong East', 'Pasir Ris', 'Scheduled');
+INSERT INTO Advertisement VALUES (TIMESTAMP '2018-12-20 12:31', 'Beng', 2, TIMESTAMP '2019-12-12 12:30', 20, 'Jurong East', 'Pasir Ris', 'Active');
 INSERT INTO Advertisement VALUES (TIMESTAMP '2018-12-21 12:31', 'Adiyogaisthebest', 2, TIMESTAMP '2019-12-12 12:30', 20, 'Jurong East', 'Pasir Ris', 'Active');
 INSERT INTO Advertisement VALUES (TIMESTAMP '2018-12-22 12:31', 'Adiyogaisthebest', 2, TIMESTAMP '2019-12-13 12:30', 20, 'Jurong East', 'Pasir Ris', 'Scheduled');
 INSERT INTO Advertisement VALUES (TIMESTAMP '2018-12-23 12:31', 'Adiyogaisthebest', 2, TIMESTAMP '2019-12-14 12:30', 20, 'Jurong East', 'Pasir Ris', 'Scheduled');
@@ -510,6 +511,8 @@ INSERT INTO Bids VALUES ('Chew', 'Harley', TIMESTAMP '2018-12-18 12:31', 30, 'su
 INSERT INTO Bids VALUES ('Beng', 'Isabella', TIMESTAMP '2018-12-19 12:31', 30, 'successful', 2);
 INSERT INTO Bids VALUES ('Adi', 'Joseph', TIMESTAMP '2018-12-20 12:31', 30, 'successful', 2);
 INSERT INTO Bids VALUES ('Emil', 'Adiyogaisthebest', TIMESTAMP '2018-12-21 12:31', 30, 'ongoing', 2);
+INSERT INTO Bids VALUES ('Ali', 'Adiyogaisthebest', TIMESTAMP '2018-12-21 12:31', 30, 'ongoing', 2);
+INSERT INTO Bids VALUES ('Chew', 'Harley', TIMESTAMP '2018-12-21 12:31', 30, 'successful', 2);
 INSERT INTO Bids VALUES ('Beng', 'Adiyogaisthebest', TIMESTAMP '2018-12-22 12:31', 30, 'successful', 2);
 INSERT INTO Bids VALUES ('Adi', 'Adiyogaisthebest', TIMESTAMP '2018-12-23 12:31', 30, 'successful', 2);
 
@@ -570,4 +573,4 @@ INSERT INTO Owns VALUES ('Harley', 'BC8888');
 INSERT INTO Owns VALUES ('Isabella', 'C8888');
 INSERT INTO Owns VALUES ('Joseph', 'ABC8888');
 INSERT INTO Owns VALUES ('teo', '007');
-INSERT INTO Owns VALUES ('Adiyogaisthebest', 'GiveMeA'); 
+INSERT INTO Owns VALUES ('Adiyogaisthebest', 'GiveMeA');
